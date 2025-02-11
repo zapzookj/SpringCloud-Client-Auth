@@ -1,6 +1,16 @@
 spring:
   application:
     name: auth-service
+  datasource:
+    url: jdbc:hsqldb:mem:testdb
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    username: username
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.HSQLDialect
+    hibernate:
+      ddl-auto: create-drop  # 애플리케이션 종료 시 DB 삭제
+    show-sql: true  # SQL 로그 출력
 
 eureka:
   client:
@@ -14,3 +24,4 @@ service:
 
 server:
   port: 19095
+
